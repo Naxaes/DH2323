@@ -62,7 +62,7 @@ void Update(float dt)
 {
     std::cout << "Render time: " << dt << " s." << std::endl;
 
-	const Uint8* keystate = SDL_GetKeyboardState(NULL);
+	const Uint8* keystate = SDL_GetKeyboardState(nullptr);
 
 	if (keystate[SDL_SCANCODE_UP])     { std::cout << "Pressing UP"		<< std::endl; }
 	if (keystate[SDL_SCANCODE_DOWN])   { std::cout << "Pressing DOWN"	<< std::endl; }

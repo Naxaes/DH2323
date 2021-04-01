@@ -64,7 +64,7 @@ void Update(float dt)
 {
 	std::cout << "Render time: " << dt << " s." << std::endl;
 
-	const Uint8* keystate = SDL_GetKeyboardState(NULL);
+	const Uint8* keystate = SDL_GetKeyboardState(nullptr);
 
 	if (keystate[SDL_SCANCODE_UP])     { std::cout << "Pressing UP"		<< std::endl; }
 	if (keystate[SDL_SCANCODE_DOWN])   { std::cout << "Pressing DOWN"	<< std::endl; }
@@ -84,13 +84,13 @@ void Draw(Window& window, const vector<Triangle>& triangles)
 {
 	window.fill(BLACK);
 
-	for (int i = 0; i < triangles.size(); ++i)
+	for (const auto& triangle : triangles)
 	{
 		vector<vec3> vertices(3);
 
-		vertices[0] = triangles[i].v0;
-		vertices[1] = triangles[i].v1;
-		vertices[2] = triangles[i].v2;
+		vertices[0] = triangle.v0;
+		vertices[1] = triangle.v1;
+		vertices[2] = triangle.v2;
 
 		// Add drawing
 	}

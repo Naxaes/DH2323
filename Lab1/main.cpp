@@ -73,6 +73,6 @@ void Draw(Window& window)
         }
     }
 
-    // The same can be acheived with:
+    // The same can be achieved with:
     // window.fill(BLUE);
 }

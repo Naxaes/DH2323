@@ -3,6 +3,7 @@
 
 #include "glm/glm.hpp"
 #include "SDL_helper.h"
+#include "TestModel.h"
 
 
 using glm::vec3;
@@ -11,7 +12,7 @@ using glm::mat3;
 // --------------------------------------------------------
 // GLOBAL VARIABLES
 
-const int SCREEN_WIDTH = 640;
+const int SCREEN_WIDTH  = 640;
 const int SCREEN_HEIGHT = 480;
 
 
@@ -28,7 +29,7 @@ void Draw(Window& window);
 
 int main(int argc, char* argv[])
 {
-    Window window = Window::Create("Lab1", SCREEN_WIDTH, SCREEN_HEIGHT);
+    Window window = Window::Create("Lab2", SCREEN_WIDTH, SCREEN_HEIGHT);
     Clock  clock  = Clock();
 
     bool running = true;
@@ -62,20 +63,20 @@ void Update(float dt)
 {
     std::cout << "Render time: " << dt << " s." << std::endl;
 
-	const Uint8* keystate = SDL_GetKeyboardState(nullptr);
+	const Uint8* key_state = SDL_GetKeyboardState(nullptr);
 
-	if (keystate[SDL_SCANCODE_UP])     { std::cout << "Pressing UP"		<< std::endl; }
-	if (keystate[SDL_SCANCODE_DOWN])   { std::cout << "Pressing DOWN"	<< std::endl; }
-	if (keystate[SDL_SCANCODE_RIGHT])  { std::cout << "Pressing RIGHT"	<< std::endl; }
-	if (keystate[SDL_SCANCODE_LEFT])   { std::cout << "Pressing LEFT"	<< std::endl; }
-	if (keystate[SDL_SCANCODE_RSHIFT]) { std::cout << "Pressing RSHIFT" << std::endl; }
-	if (keystate[SDL_SCANCODE_RCTRL])  { std::cout << "Pressing RCTRL"	<< std::endl; }
-	if (keystate[SDL_SCANCODE_W])      { std::cout << "Pressing W"		<< std::endl; }
-	if (keystate[SDL_SCANCODE_S])      { std::cout << "Pressing S"		<< std::endl; }
-	if (keystate[SDL_SCANCODE_D])      { std::cout << "Pressing D"		<< std::endl; }
-	if (keystate[SDL_SCANCODE_A])      { std::cout << "Pressing A"		<< std::endl; }
-	if (keystate[SDL_SCANCODE_E])      { std::cout << "Pressing E"		<< std::endl; }
-	if (keystate[SDL_SCANCODE_Q])      { std::cout << "Pressing Q"		<< std::endl; }
+	if (key_state[SDL_SCANCODE_UP])     { std::cout << "Pressing UP"	<< std::endl; }
+	if (key_state[SDL_SCANCODE_DOWN])   { std::cout << "Pressing DOWN"	<< std::endl; }
+	if (key_state[SDL_SCANCODE_LEFT])   { std::cout << "Pressing LEFT"	<< std::endl; }
+	if (key_state[SDL_SCANCODE_RIGHT])  { std::cout << "Pressing RIGHT"	<< std::endl; }
+	if (key_state[SDL_SCANCODE_RSHIFT]) { std::cout << "Pressing RSHIFT"    << std::endl; }
+	if (key_state[SDL_SCANCODE_RCTRL])  { std::cout << "Pressing RCTRL"	<< std::endl; }
+	if (key_state[SDL_SCANCODE_W])      { std::cout << "Pressing W"		<< std::endl; }
+	if (key_state[SDL_SCANCODE_S])      { std::cout << "Pressing S"		<< std::endl; }
+	if (key_state[SDL_SCANCODE_A])      { std::cout << "Pressing A"		<< std::endl; }
+	if (key_state[SDL_SCANCODE_D])      { std::cout << "Pressing D"		<< std::endl; }
+	if (key_state[SDL_SCANCODE_E])      { std::cout << "Pressing E"		<< std::endl; }
+	if (key_state[SDL_SCANCODE_Q])      { std::cout << "Pressing Q"		<< std::endl; }
 }
 
 void Draw(Window& window)

@@ -30,7 +30,7 @@ void Update(float dt);
 int main(int argc, char* argv[])
 {
 	vector<Triangle> triangles = LoadTestModel();
-	Window window = Window::Create("Lab1", SCREEN_WIDTH, SCREEN_HEIGHT);
+	Window window = Window::Create("Lab3", SCREEN_WIDTH, SCREEN_HEIGHT);
 	Clock  clock  = Clock();
 
 	bool running = true;

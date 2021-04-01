@@ -83,7 +83,7 @@ namespace Colors
     const AnsiColor BOLD_GREEN  ("\033[1;32m");
     const AnsiColor YELLOW      ("\033[0;33m");
     const AnsiColor BOLD_YELLOW ("\033[1;33m");
-    const AnsiColor NORMAL      ("\033[0m");
+    const AnsiColor NORMAL      ("\033[0m\0\0\0");
 };
 
 using Colors::AnsiColor;

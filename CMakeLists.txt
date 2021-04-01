@@ -4,13 +4,13 @@ project(DH2323)
 # ---- Setting up useful compiler flags ----
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     message(STATUS "Building for Clang")
-    set(COMPILER_FLAGS      "-Werror -pedantic -pedantic-errors")
+    set(COMPILER_FLAGS      "-pedantic -pedantic-errors")
     set(COMPILER_FLAGS_SLOW "-O0 -g -fsanitize=address -fno-omit-frame-pointer")
     set(COMPILER_FLAGS_FAST "-O2")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     # Using Visual Studio C++
     message(STATUS "Building for MSVC")
-    set(COMPILER_FLAGS      "-W4 -WX -D_CRT_SECURE_NO_WARNINGS -Oi -MT")
+    set(COMPILER_FLAGS      "-W4 -D_CRT_SECURE_NO_WARNINGS -Oi -EHa")
     set(COMPILER_FLAGS_SLOW "-Od -Zi")
     set(COMPILER_FLAGS_FAST "-O2")
 else()
@@ -19,7 +19,7 @@ endif()
 
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-    set(COMPILER_FLAGS "${COMPILER_FLAGS} ${COMPILER_FLAGS_FAST}")
+    set(COMPILER_FLAGS "${COMPILER_FLAGS} ${COMPILER_FLAGS_SLOW}")
     message(STATUS "Building debug...")
 else()
     set(COMPILER_FLAGS "${COMPILER_FLAGS} ${COMPILER_FLAGS_FAST}")
@@ -39,6 +39,7 @@ set(HELP_PATH libraries/)
 
 
 add_subdirectory(${SDL2_PATH} EXCLUDE_FROM_ALL)
+set_target_properties(SDL2 PROPERTIES EXCLUDE_FROM_ALL 1 EXCLUDE_FROM_DEFAULT_BUILD 1)
 
 
 add_executable(Lab1 Lab1/main.cpp)                     # Add source files for lab 1.

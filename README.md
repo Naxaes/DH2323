@@ -5,7 +5,15 @@ This is a project template for the course DH2323 Computer Graphics and Interacti
 
 Great IDE's are [Visual Studio](https://visualstudio.microsoft.com/downloads/) for Windows or [CLion](https://www.jetbrains.com/clion/download/) for Mac. They both use [CMake](https://cmake.org/) as build system.
 
-Once you got either and have downloaded this template, right-click on the `CMakeLists` file and select *"Reload Cmake"* or *"Create Cmake cache"* or something. Just spam click the things that mention CMake until it works.
+Once you got either and have downloaded this template, right-click on the `CMakeLists` file and select *"Reload Cmake"* or *"Generate cache for ..."* or something. Just spam click the things that mention CMake until it works.
+
+When the cache is generated, you should be able to see and select the labs/tests in "Select Startup Item" in Visual Studio and "Build configurations" in CLion. The following should work right out of the box:
+
+* Lab1
+* Lab2
+* Lab3
+* other
+* test1
 
 ## Tips and tricks
 

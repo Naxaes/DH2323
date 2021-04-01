@@ -238,7 +238,7 @@ void test_##name(                                                               
     bool status = value_a comparison value_b;                                                                           \
                                                                                                                         \
     __checks   += 1;                                                                                                    \
-    __failures += not status;                                                                                           \
+    __failures += !status;                                                                                              \
                                                                                                                         \
     if ((options.flags & Options::OUTPUT_CHECKS) == Options::OUTPUT_CHECKS)                                             \
     {                                                                                                                   \
@@ -250,7 +250,7 @@ void test_##name(                                                               
                 __LINE__, __test_info, __checks                                                                         \
                 );                                                                                                      \
     }                                                                                                                   \
-    else if ((options.flags & Options::OUTPUT_FAILURES) == Options::OUTPUT_FAILURES and not status)                     \
+    else if ((options.flags & Options::OUTPUT_FAILURES) == Options::OUTPUT_FAILURES && !status)                         \
     {                                                                                                                   \
         details::Failure(options,                                                                                       \
             details::Format("%s " #comparison " %s \t (%s " #comparison " %s)", #a, #b, value_a, value_b),              \

@@ -7,7 +7,7 @@ Great IDE's are [Visual Studio](https://visualstudio.microsoft.com/downloads/) f
 
 Once you got either and have downloaded this template, right-click on the `CMakeLists` file and select *"Reload Cmake"* or *"Generate cache for ..."* or something. Just spam click the things that mention CMake until it works.
 
-When the cache is generated, you should be able to see and select the labs/tests in "Select Startup Item" in Visual Studio and "Build configurations" in CLion. The following should work right out of the box:
+When the cache is generated, you should be able to see and select the labs/tests in "Select Startup Item" in Visual Studio and "Build configurations" in CLion. The following targets already exists and should work right out of the box:
 
 * Lab1
 * Lab2

@@ -15,6 +15,8 @@ When the cache is generated, you should be able to see and select the labs/tests
 * other
 * test1
 
+You will probably see other targets as well. These are some test programs from SDL which you can ignore. Or don't, I'm not your parent.
+
 ## Tips and tricks
 
 ### CLion professional is free
